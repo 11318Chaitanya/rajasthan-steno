@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base_url = process.env.REACT_APP_BASE_URL;
+const base_url = "https://rajasthan-cwa6g4f5ddf8d2dn.centralindia-01.azurewebsites.net";
 
 const getConfig = () => {
   const token = localStorage.getItem("authToken"); // Ensure the token is stored correctly after login
