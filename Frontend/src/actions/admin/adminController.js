@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base_url = process.env.BASE_URL;
+const base_url = process.env.REACT_APP_BASE_URL;
 
 const getConfig = () => {
   const token = localStorage.getItem("authToken"); // Ensure the token is stored correctly after login

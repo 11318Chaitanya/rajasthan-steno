@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base_url = process.env.BASE_URL;
+const base_url = process.env.REACT_APP_BASE_URL;
 
 const config = {
   headers: { "Content-Type": "application/json" },
@@ -9,7 +9,6 @@ const config = {
 
 export async function register(user) {
   try {
-    console.log("called");
     const response = await axios.post(
       `${base_url}/api/v1/user/register`,
       user,
@@ -38,6 +37,8 @@ export async function register(user) {
 
 export async function login(user) {
   try {
+    console.log("htis is login ", base_url);
+
     const response = await axios.post(
       `${base_url}/api/v1/user/login`,
       user,

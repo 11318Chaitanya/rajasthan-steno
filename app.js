@@ -15,7 +15,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://rajasthan-cwa6g4f5ddf8d2dn.centralindia-01.azurewebsites.net"],
+    origin: ["https://rajasthan-cwa6g4f5ddf8d2dn.centralindia-01.azurewebsites.net", "http://localhost:3000"],
     credentials: true,
   })
 );
@@ -25,11 +25,12 @@ app.use(cookieParser());
 
 
 const staticPath = path.join(__dirname, "./Frontend/dist");
-app.use(express.static(staticPath));
 
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/admin", adminRouter);
 app.use("/api/v1/stenoTests", stenoTestRoutes);
 app.use("/api/v1/typingTests", test);
+
+app.use(express.static(staticPath));
 
 export { app };
