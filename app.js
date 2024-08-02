@@ -15,16 +15,13 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "localhost"],
+    origin: ["https://rajasthan-cwa6g4f5ddf8d2dn.centralindia-01.azurewebsites.net"],
     credentials: true,
   })
 );
 
 app.use(express.json());
 app.use(cookieParser());
-
-
-
 
 
 const staticPath = path.join(__dirname, "./Frontend/dist");
